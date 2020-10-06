@@ -22,7 +22,15 @@ const axios = require('axios')
 
 axios.get('https://api.openbrewerydb.org/breweries')
     .then(response => {
-        console.log(response.data)
+        let datos = response.data
+        let payload = {
+            "nombre:": "Felipe diaz",
+            "Facultad": "ingenieria",
+            "edad": 23,
+            "estado": datos[10].state
+        }
+        console.log(datos)
+        console.log(payload)
     })
     .catch(error => {
         console.log(error)
